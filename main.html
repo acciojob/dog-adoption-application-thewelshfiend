@@ -3,14 +3,129 @@
 <html>
 
 <head>
-	<link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 80vh;
+            display: grid;
+            place-items: center;
+        }
+
+        fieldset {
+            width: 70vw;
+            padding: 30px 20px;
+            border: 6px double gray;
+            border-radius: 10px;
+            overflow-y: auto;
+        }
+
+        legend {
+            font-size: 2rem;
+            font-family: 'Courier New', Courier, monospace;
+            background-color: rgb(250, 226, 196);
+            text-align: center;
+            padding: 3px 10px;
+            border: 4px dashed gray;
+            border-radius: 100px;
+        }
+
+        form {
+            height: 50vh;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: 0.75rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 10px;
+
+            &>.container {
+                align-self: center;
+            }
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            outline: none;
+            border: none;
+            border-radius: 2px;
+            background-color: gray;
+
+            &::placeholder {
+                color: rgb(115, 72, 19);
+            }
+
+            &:focus {
+                background-color: rgb(238, 188, 126);
+            }
+        }
+
+        .container {
+            width: 70%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        select {
+            height: 3rem;
+            overflow-y: auto;
+			outline: none;
+        }
+
+        button {
+            align-self: center;
+            margin-top: 50px;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0px 0px 5px black,
+                6px 5px 10px rgba(0, 0, 0, 0.394);
+            background-color: rgb(238, 188, 126);
+            transition: all 500ms ease;
+
+            &:hover {
+                font-size: 0.8rem;
+                background-color: rgb(228, 141, 36);
+            }
+
+            &:active {
+                opacity: 0.8;
+            }
+        }
+    </style>
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+    <!-- the entire body must be written by student -->
+    <fieldset>
+        <legend><strong>Dog Adoption</strong></legend>
+        <form method="post">
+            <input id="name" type="text" placeholder="Name" required>
+            <input id="phone" type="text" placeholder="Phone Number" required>
+            <input id="address" type="text" placeholder="Address" required>
+            <div class="container">
+                <label for="multiSelect">Please select your preferred breeds:</label>
+                <select name="" id="multiSelect" multiple required>
+                    <option value="Retriever">Retriever</option>
+                    <option value="Labrador">Labrador</option>
+                    <option value="Beagle">Beagle</option>
+                    <option value="Terrier">Terrier</option>
+                    <option value="Rottweiler">Rottweiler</option>
+                </select>
+            </div>
+            <div class="container">
+                <label for="checkbox">Have you ever lived with a Dog before?</label>
+                <input id="checkbox" type="checkbox" value="Have you ever lived with a Dog before?">
+            </div>
+            <button id="submit" type="submit" value="Submit">Submit</button>
+        </form>
+    </fieldset>
 
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>
